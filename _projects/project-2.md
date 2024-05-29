@@ -1,6 +1,6 @@
 ---
-title: "project item number 2"
-excerpt: "Short description of project item number 2 <br/><img src='/images/500x300.png'>"
+title: "project item number 1"
+excerpt: "Short description of project item number 1<br/><img src='/images/500x300.png'>"
 collection: project
 ---
 
