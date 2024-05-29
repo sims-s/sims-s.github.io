@@ -12,7 +12,7 @@ title                    : "Sam's homepage"
 title_separator          : "-"
 name                     : &name "Sam Sims"
 description              : &description "personal description"
-url                      : https://sam-sims.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://sims-s.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "sims-s/sims-s.github.io"
 
