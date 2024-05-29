@@ -6,4 +6,4 @@ redirect_from:
   - /about/
   - /about.html
 ---
-STuff goes here orsmthn
+stuff
