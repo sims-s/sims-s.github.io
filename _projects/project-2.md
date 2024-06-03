@@ -9,14 +9,14 @@ All models trained on one task individually, no multitask models. But that would
 * Factorization (4 --> 2x2)
 * Pairwise Addition (45 + 202 --> 247)
 
-## Why?
+# Why?
 * Purpose of this project isn't to make a model that itself does something useful. It's more about exploring the trained models and how they generalize since their task is so well defined.
   * "In theory" the models could be useful. E.g. big number may be hard to factor, but if you predict posssible factors, easy to multiply and verify. And with beam search, it's easy to spit out a bunch of answers. Doesn't matter how many of them are wrong as long as one of them is right. But in practice, that's hard.
 * "Literally infinite" perfectly labeled data. There are always more numbers.
 
-## Results
+# Results
 
-### Pairwise Addition
+## Pairwise Addition
 This first model is trained on pairs of numbers [0,256] - with a 90/10 train/test split (pairs not individual numbers held out).
 It gets 100% test accuracy on on the top beam.
 [For some attention visualizations and exploring the embdddings, check out this notebooks](https://nbviewer.org/github/sims-s/neural-math/blob/main/notebooks/%5BPairwiseAddition%5D%20ModelExploration.ipynb).  Hard to make good sense of them.  
@@ -26,31 +26,30 @@ This is model predicctions on a random 1% sampling of pairs of numbers between 0
 
 The model stops generalizing once we hit 300. Which makes a lot of sense - the models were trained on numbers up to 256, so they've never encoutered a 3 in the hundreds digit. But they seem to generalize for [257, 299]
 
-### Factorization
+## Factorization
 I explored this task much more. It's a lot more interesting.  
 
-#### Hyperparameters
+### Hyperparameters
 The goal here is to find a reasonable set of hyperparameters to train a larger model on.  
 For these hyperparameter experiments, my dataset was all integers 2<=x<=2**16 (65536).  
 [All of the results are here.](https://nbviewer.org/github/sims-s/neural-math/blob/main/notebooks/%5BFactorization%5D%20HParamSearch.ipynb) I'm didn't write things about most of them, just the interesting stuff.
 
-#### Base
+### Base
 When encoding a number (input or output), we can encode it in any base we want, it doesn't need to be base 10. Training in larger bases leads to shorter sequences, which can be good. Especially for larger numbers.
 
-<!-- ![](/images/FactorBaseComparison.png)   -->
-<!-- <img src="/images/FactorBaseComparison.png" width="200"> -->
-[<img src="/images/FactorBaseComparison.png" width="200">](/images/FactorBaseComparison.png)
+
+[<img src="/images/FactorBaseComparison.png" width="1000">](/images/FactorBaseComparison.png)
 
 
 * Both of these charts represent the same data, each row is a model trained with the shown hyperparameters (the ones not shown are all the same). The left is grouped by number of layers, and the right is sorted by base.  
 * Consider that lower base losses will inherently be lower because there're fewer tokens.
 * Base 30 encoding works better than the other bases I've tested here. I've found going higher didn't seem to have much benefit in earlier vesrions, so I didn't go larger. But could be worth revisiting.  
   
-#### Number of Encoder/Decoder layers
+### Number of Encoder/Decoder layers
 ![](/images/FactorEncoderLayerComparison.png)
 * Interestingly, the larger stacks of models don't perform better. Maybe that's a function of $2^{16}$ not being very large.
 
-#### Attention Weight Initialization
+### Attention Weight Initialization
 In Pytorch, [attention weights are initialized here with `xavier_uniform_`](https://github.com/pytorch/pytorch/blob/main/torch/nn/modules/activation.py#L1040).  
 This code creates a different weight initialization depending on whether or not q/k/v weights are grouped (one weight matrix $\left[3D\times D\right]$ size vs 3 $\left[D\times D\right]$s).  
 With no other parameters specified, the initialization used is Uniform$\left[-a,a]\right]$ where $a=\sqrt{\frac{6}{W.size(0) + W.size(1)}}$ for a given weight matrix W.  
