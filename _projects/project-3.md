@@ -25,7 +25,9 @@ Here are the results:
   * Diagonal is mix between itself --> uninteresting
 
 ![](/images/StyleMix48.png)
+---
 ![](/images/StyleMix1632.png)
+---
 ![](/images/StyleMix64128.png)
 
 * The very lowest resolutions control the overall orientation of the bird.
