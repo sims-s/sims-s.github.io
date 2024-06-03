@@ -1,5 +1,5 @@
 ---
-title: "Transformer "Math""
+title: "Transformer Math"
 excerpt: "Train transformer encoder-decoder models to solve \"math\" tasks. Focused on Integer Factorization > Pairwise Addition. <img src='/images/AdditionGeneralizationPlot.png.jpg'>"
 collection: project
 ---
