@@ -38,7 +38,7 @@ For these hyperparameter experiments, my dataset was all integers 2<=x<=2**16 (6
 When encoding a number (input or output), we can encode it in any base we want, it doesn't need to be base 10. Training in larger bases leads to shorter sequences, which can be good. Especially for larger numbers.
 
 
-[<img src="/images/FactorBaseComparison.png" width="1000">](/images/FactorBaseComparison.png)
+[<img src="/images/FactorBaseComparison.png" width="2000">](/images/FactorBaseComparison.png)
 
 
 * Both of these charts represent the same data, each row is a model trained with the shown hyperparameters (the ones not shown are all the same). The left is grouped by number of layers, and the right is sorted by base.  
@@ -62,9 +62,9 @@ Xavier_uniform_ takes in a `gain` parameter which is just mutiplied by everythin
 Decreasing gain further didn't help, around .5 seemed to be the sweet spot. Though I didn't test too much further.  
 I'm not sure if this behavior in pytorch is intentional.
 
-#### Bigger Model
+### Bigger Model
 Now that we've figured out the hyperparameter setup, time to train a larger model. The model is 10 layers, trained in base 30 on all numbers (except a 20% test set) up to $2^{22}\approxeq 4.2 \text{ million}$
-##### Results & Thoughts
+### Results & Thoughts
 * 96.3% correct factorization rate; 99% correct product rate. Correct product means the numbers decoded produce the correct number, but not all of the numbers are prime.
   * The incorrect predictions have a very consistent behavior. They're "predicted as prime" - i.e. the model's prediction is the input itself. 
   * The model's training data contains prime numbers that follow that structure. So it follows it for hard numbers.
@@ -73,7 +73,7 @@ Now that we've figured out the hyperparameter setup, time to train a larger mode
 * We can also measure the performance on the 4096 numbers after $2^{23}$. At 10 beams, the model is 17% accurate. Quite a drop!
 * 
 
-##### Cosine Similarity Plot
+### Cosine Similarity Plot
 Cosine similarity of raw embeddings:
 ![](/images/FactorizationCosineSim.png)
 * The diagonal has been clipped to the maximum off diagonal value. The diagonal's always 1, but the other cosime sims are much smaller, so clipping it makes the plot easier to read.
@@ -82,7 +82,7 @@ Cosine similarity of raw embeddings:
   * evens are similar to evens; same with odds;
   * (25, 5) are similar
 
-##### Attention Visualization
+### Attention Visualization
 [See it here](https://nbviewer.org/github/sims-s/neural-math/blob/main/notebooks/VisualizeAttention.ipynb).  
 It's complicated, but a few things seem consistent:
 * (EncEnc): During the first layer or two, the number tokens strongly attend to themselves across all heads.
