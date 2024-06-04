@@ -4,14 +4,6 @@ excerpt: "Train transformer encoder-decoder models to solve \"math\" tasks. Focu
 collection: project
 ---
 
-<style type="text/css">
-.main-container {
-  max-width: 1800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-
 # Overview
 Convert general math problems to sequences for transformer encoder decoder models. Encode the problem that should be solved, decode the answer to the problem.  
 All models trained on one task individually, no multitask models. But that would be quite interesting.
@@ -55,7 +47,8 @@ When encoding a number (input or output), we can encode it in any base we want, 
 * Base 30 encoding works better than the other bases I've tested here. I've found going higher didn't seem to have much benefit in earlier vesrions, so I didn't go larger. But could be worth revisiting.  
   
 ### Number of Encoder/Decoder layers
-![](/images/FactorEncoderLayerComparison.png)
+<!-- ![](/images/FactorEncoderLayerComparison.png) -->
+[<img src="/images/FactorEncoderLayerComparison.png" width="1000">](/images/FactorEncoderLayerComparison.png)
 * Interestingly, the larger stacks of models don't perform better. Maybe that's a function of $2^{16}$ not being very large.
 
 ### Attention Weight Initialization
