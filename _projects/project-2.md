@@ -3,6 +3,15 @@ title: "Transformer Math"
 excerpt: "Train transformer encoder-decoder models to solve \"math\" tasks. Focused on Integer Factorization > Pairwise Addition. <img src='/images/AdditionGeneralizationPlot.png'>"
 collection: project
 ---
+
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
 # Overview
 Convert general math problems to sequences for transformer encoder decoder models. Encode the problem that should be solved, decode the answer to the problem.  
 All models trained on one task individually, no multitask models. But that would be quite interesting.
