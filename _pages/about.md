@@ -1,9 +1,12 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-stuff
+## About
+Hi, I'm Sam.   
+I'm a data scientist focused on all things deep learning.  
+[Check out some of my projects!](https://sims-s.github.io/projects/)

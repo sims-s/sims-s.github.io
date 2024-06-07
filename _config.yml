@@ -8,12 +8,12 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Sam's homepage"
+title                    : "Sam's Homepage"
 title_separator          : "-"
 name                     : &name "Sam Sims"
 description              : &description "personal description"
 url                      : https://sims-s.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
+baseurl                  : "/projects" # the subpath of your site, e.g. "/blog"
 repository               : "sims-s/sims-s.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
