@@ -1,0 +1,49 @@
+@startuml
+!theme crt-amber
+
+actor User
+
+
+(Retrieval Call) as ret_call #green
+(Spice Retriever) as spice_ret #blue
+(Tool Selection & Calling) as llm #green
+(Question or\nInstruction) as question #brown
+(Retrieved  Spices) as ret_spice #brown
+
+'DUUUUDDE WTF BRAIN
+(Feedback Retriever) as fbk_ret #blue
+(Retrieved Feedback) as ret_fbk #brown
+
+User --> question
+question --> ret_call
+ret_call --> spice_ret
+spice_ret --> ret_spice
+question --> llm
+ret_spice --> llm
+
+question --> fbk_ret
+fbk_ret --> ret_fbk
+ret_fbk --> llm
+
+(Locate) as locate #DarkViolet
+(Check) as check #DarkViolet
+(Remove) as remove #DarkViolet
+(Feedback) as feedback #DarkViolet
+(Lights) as lights #DarkViolet
+
+llm --> locate
+llm --> check
+llm --> remove
+llm --> feedback
+llm --> lights
+
+
+legend right
+    |Color| Type |
+    |<#brown>| Data|
+    |<#00FF00>| LLM|
+    |<#0000FF>| Vector Store|
+    |<#DarkViolet>| Rack Task|
+
+endlegend
+@enduml
