@@ -6,7 +6,6 @@ redirect_from:
   - /about/
   - /about.html
 ---
-## About
 Hi, I'm Sam.   
 I'm a data scientist focused on all things deep learning.  
 [Check out some of my projects!](https://sims-s.github.io/projects/)
