@@ -1,6 +1,6 @@
 ---
 title: "Bird GAN"
-excerpt: "[StyleGAN Bird Generation](git@github.com:sims-s/bird-gan.git)<br/><img src='/images/BirdGanSamples.png'>"
+excerpt: "[StyleGAN Bird Generation](https://github.com/sims-s/bird-gan)<br/><img src='/images/BirdGanSamples.png'>"
 collection: project
 ---
 

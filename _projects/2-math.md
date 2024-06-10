@@ -1,6 +1,7 @@
 ---
 title: "Transformer Math"
-excerpt: "[Train transformer encoder-decoder models to solve \"math\" tasks](https://github.com/sims-s/neural-math). Focused on Integer Factorization > Pairwise Addition. <img src='/images/AdditionGeneralizationPlot.png'>"
+excerpt: "[Train transformer encoder-decoder models to solve \"math\" tasks](https://github.com/sims-s/neural-math).  
+Focused on Integer Factorization > Pairwise Addition. <img src='/images/AdditionGeneralizationPlot.png'>"
 collection: project
 ---
 
