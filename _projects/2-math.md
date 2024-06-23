@@ -7,6 +7,7 @@ collection: project
 
 # Overview
 Convert general math problems to sequences for transformer encoder decoder models. Encode the problem that should be solved, decode the answer to the problem.  
+[Code is here.](https://github.com/sims-s/neural-math/)  
 All models trained on one task individually, no multitask models. But that would be quite interesting.
 * Factorization (4 --> 2x2)
 * Pairwise Addition (45 + 202 --> 247)
@@ -14,12 +15,12 @@ All models trained on one task individually, no multitask models. But that would
 # Why?
 * Purpose of this project isn't to make a model that itself does something useful. It's more about exploring the trained models and how they generalize since their task is so well defined.
   * "In theory" the models could be useful. E.g. big number may be hard to factor, but if you predict posssible factors, easy to multiply and verify. And with beam search, it's easy to spit out a bunch of answers. Doesn't matter how many of them are wrong as long as one of them is right. But in practice, that's hard.
-* "Literally infinite" perfectly labeled data. There are always more numbers.
+* Literally infinite perfectly labeled data. There are always more numbers.
 
 # Results
 
 ## Pairwise Addition
-This first model is trained on pairs of numbers [0,256] - with a 90/10 train/test split (pairs not individual numbers held out).
+This first model is trained on pairs of numbers [0,256] - with a 90/10 train/test split (pairs not individual numbers held out).  
 It gets 100% test accuracy on on the top beam.
 [For some attention visualizations and exploring the embdddings, check out this notebooks](https://nbviewer.org/github/sims-s/neural-math/blob/main/notebooks/%5BPairwiseAddition%5D%20ModelExploration.ipynb).  Hard to make good sense of them.  
 The most interesting plot:  

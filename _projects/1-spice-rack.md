@@ -5,9 +5,9 @@ collection: project
 ---
 ## Spice Rack Search Assistant
 ![](/images/RackPicLit.jpg)
-This is a voice searchable spice rack mainly powered by LLMs and a bit of pytorch. and some other things too.
+This is a voice searchable spice rack mainly powered by LLMs and a bit of pytorch/CV2. 
 
-Here's some of it's functionality:
+[Here's some of its functionality](https://www.youtube.com/watch?v=qXvxqRdytYA&list=PLbq19pSjbXP_jyKa3y9LYxd5qOoS3Omvs&pp=gAQBiAQB):
 * [Scan a spice into the rack](https://youtu.be/qXvxqRdytYA)
 * [Search for a spice](https://youtu.be/kipiX0R6iUo)
 * [More general search works ok too](https://youtu.be/SmP8thLU6Zo)
