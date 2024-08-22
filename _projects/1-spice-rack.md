@@ -10,6 +10,7 @@ This is a voice searchable spice rack mainly powered by LLMs and a bit of pytorc
 [Here's some of its functionality](https://www.youtube.com/watch?v=qXvxqRdytYA&list=PLbq19pSjbXP_jyKa3y9LYxd5qOoS3Omvs&pp=gAQBiAQB):
 * [Scan a spice into the rack](https://youtu.be/qXvxqRdytYA)
 * [Search for a spice](https://youtu.be/kipiX0R6iUo)
+* [Find multiple spices at once](https://youtu.be/Jl-iadkH0S4)
 * [More general search works ok too](https://youtu.be/SmP8thLU6Zo)
 * [Remove a spice](https://youtu.be/yFJg5PPse2s)
 * [Feedback system](https://youtu.be/_LslLYXnXuI)
