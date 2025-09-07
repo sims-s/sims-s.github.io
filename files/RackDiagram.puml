@@ -1,0 +1,52 @@
+@startuml
+!theme crt-amber
+
+actor User
+
+
+(Question or\nInstruction) as question #brown
+
+(Tool Select Prompt) as tool_select #brown
+
+' (Retrieval Call) as ret_call #green
+' (Spice Retriever) as spice_ret #blue
+(LLM) as llm #green
+
+(All Spices) as all_spices #brown
+(All Feedback) as all_feedback #brown
+
+User --> question
+question --> tool_select
+all_spices --> tool_select
+all_feedback --> tool_select
+
+tool_select --> llm
+
+
+
+(Locate) as locate #DarkViolet
+(Sample Random) as sample #DarkViolet
+(Check Presence) as check #DarkViolet
+(Report Missing) as report_missing #DarkViolet
+(Remove) as remove #DarkViolet
+(Feedback) as feedback #DarkViolet
+(Lights) as lights #DarkViolet
+
+llm --> locate
+llm --> sample
+llm --> check
+llm --> report_missing
+llm --> remove
+llm --> feedback
+llm --> lights
+
+
+legend right
+    |Color| Type |
+    |<#brown>| Data|
+    |<#00FF00>| LLM|
+    |<#0000FF>| Vector Store|
+    |<#DarkViolet>| Rack Task|
+
+endlegend
+@enduml

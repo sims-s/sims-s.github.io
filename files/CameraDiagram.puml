@@ -1,0 +1,25 @@
+@startuml
+!theme crt-amber
+
+actor "User with Spice" as User
+
+(Scan with Camera) as scan
+(Motion Detection) as md
+(Spice Object Detection) as spice_detect
+(Get Bounding Box) as bbx
+(OCR, save\nimg & text) as ocr
+(Name Detected?) as name_detect
+
+
+User --> scan
+scan --> md
+md --> spice_detect
+spice_detect --> (do nothing) : No spice detected
+spice_detect --> bbx : Spice detected
+bbx --> ocr
+ocr --> name_detect
+name_detect --> (Spice embedded\n & saved) : Name Found
+name_detect --> User : Didn't detect name
+
+
+@enduml
